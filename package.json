@@ -9,7 +9,9 @@
     "watch": "webpack -d --watch",
     "build": "webpack -p",
     "start": "node server/server.js",
-    "seed": "node -e 'require(\"./db/seeder.js\")()'"
+    "create-seed": "node db/seed10mCSV.js && node db/seed10mJSON.js'",
+    "seedpsql": "psql < db/scehma.sql",
+    "seedmongo": "mongoimport --db magicshoes --file db/shoes.json"
   },
   "repository": {
     "type": "git",
@@ -19,14 +21,11 @@
     "Nike",
     "Jordan",
     "shoes",
+    "magic",
     "images"
   ],
-  "author": "Vignesh Balasundaram",
+  "author": "Tony Zhan",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/WARP-V/shoe_name_and_colors/issues"
-  },
-  "homepage": "https://github.com/WARP-V/shoe_name_and_colors#readme",
   "dependencies": {
     "axios": "^0.18.0",
     "babel-core": "^7.0.0-bridge.0",
