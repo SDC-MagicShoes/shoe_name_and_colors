@@ -32,7 +32,7 @@ class ColorsGrid extends React.Component {
       }
     }
     const { curShoe } = this.props;
-    const data = await axios.get(`/:${curShoe}/colors/:${ids[0].split('-')[0]}`);
+    const data = await axios.get(`/${curShoe}/colors/${ids[0].split('-')[0]}`);
     newState.images = _.chunk(data.data, 5);
     this.setState(newState);
   }

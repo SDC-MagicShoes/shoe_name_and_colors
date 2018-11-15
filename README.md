@@ -26,6 +26,17 @@
 
 > Server runs on port 3006
 
+API ROUTES:
+
+Get('/:shoeID/colors') Gets all the information for the shoe.
+Get('/:shoeID/colors/:style') Gets the style information for the shoe.
+
+Post('/new/shoe') Creates a new shoe.
+
+Delete('/:shoeId/delete') Deletes a shoe.
+
+Patch('/:shoeId/update') Updates the information for a shoe.
+
 ## Requirements
 
 - Node 10.12.0

@@ -18,6 +18,7 @@ class App extends React.Component {
       price: '$200',
       shoeType: "Men's Shoe",
     };
+    console.log(props.shoeID);
   }
 
   componentDidMount() {
@@ -30,7 +31,7 @@ class App extends React.Component {
   }
 
   async findShoeInformation(shoeID) {
-    let info = await axios.get(`/:${shoeID}/colors`);
+    let info = await axios.get(`/${shoeID}/colors`);
     [info] = info.data;
     const newState = {};
     newState.shoeID = shoeID;
