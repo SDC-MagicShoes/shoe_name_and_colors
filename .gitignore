@@ -4,5 +4,10 @@ node_modules
 # IGNORE webpack bundle
 /public/n&c_bundle.js
 
+# IGNORE JSON AND CSV FILES
+/db/colors.csv
+/db/shoes.csv
+/db/shoes.json
+
 # INGORE coverage folder
 /coverage

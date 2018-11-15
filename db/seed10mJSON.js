@@ -1,5 +1,3 @@
-const mongoose = require('mongoose');
-require('./connection.js');
 const Faker = require('faker');
 const fs = require('fs');
 
@@ -31,9 +29,9 @@ const file = fs.createWriteStream('./shoes.json');
 let i = 1;
 
 const seedEverything = () => {
-  
   const createAllShoes = (numShoes, callback) => {
-  
+    // file.write('[');
+
     while (i <= numShoes) {
       const generatedColors = generateColorsArrays(5);
       const newShoe = {
@@ -43,19 +41,30 @@ const seedEverything = () => {
         shoeLine: SHOELINE[(Math.floor(Math.random() * SHOELINE.length))],
         colors: generatedColors,
       };
-  
+
       i += 1;
-      let string = JSON.stringify(newShoe);
-  
+      let string;
+      if (i !== (NUMSHOESTOSEED + 1)) {
+        string = JSON.stringify(newShoe) + '\n';
+      } else {
+        string = JSON.stringify(newShoe);
+      }
+
       if (!file.write(string)) {
         // write returns a boolean that returns false if you ever go over memory
         return;
       }
     }
+
+    // if (i === (NUMSHOESTOSEED + 1)) {
+    //   console.log('hello');
+    //   file.write(']');
+    // }
+
     file.end();
     callback();
   };
-  
+
   file.on('drain', () => {
     createAllShoes(NUMSHOESTOSEED, () => {
       console.log('done');
