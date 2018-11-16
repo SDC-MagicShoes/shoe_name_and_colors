@@ -11,9 +11,10 @@ let i = 1;
 let j = 1;
 
 const seedEverything = () => {
+  shoeFile.write('shoeId, shoeName, price, shoeLine\n');
+  colorsFile.write('id, shoeId, url\n');
 
   const createAllShoes = (numShoes, callback) => {
-    shoeFile.write('shoeId, shoeName, price, shoeLine\n');
 
     while (i <= numShoes) {
       let shoeString = '';
@@ -34,7 +35,6 @@ const seedEverything = () => {
   };
 
   const createAllColors = (numColors, callback) => {
-    colorsFile.write('id, shoeId, url\n');
 
     while (j <= numColors) {
       let colorString = '';

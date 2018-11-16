@@ -1,4 +1,3 @@
-const Faker = require('faker');
 const fs = require('fs');
 
 // const shoeTitleSchema = new mongoose.Schema({
@@ -18,9 +17,8 @@ const generateColorsArrays = (maxNumColors) => {
   const colors = [];
   const numColors = Math.floor(Math.random() * maxNumColors) + 1;
   for (let i = 0; i < numColors; i += 1) {
-    const randomColor = Faker.commerce.color();
     const randomPictureIndex = Math.floor(Math.random() * 1000) + 1;
-    colors.push([randomColor, `https://s3-us-west-1.amazonaws.com/magicshoes/images/${randomPictureIndex}.jpg`]);
+    colors.push(`https://s3-us-west-1.amazonaws.com/magicshoes/images/${randomPictureIndex}.jpg`);
   }
   return colors;
 };
@@ -35,7 +33,7 @@ const seedEverything = () => {
     while (i <= numShoes) {
       const generatedColors = generateColorsArrays(5);
       const newShoe = {
-        shoeID: i.toString(),
+        shoeID: i,
         shoeName: `MagicShoes_${i}`,
         price: `$${Math.floor(Math.random() * 100) + 100}`,
         shoeLine: SHOELINE[(Math.floor(Math.random() * SHOELINE.length))],

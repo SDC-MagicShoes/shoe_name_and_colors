@@ -4,7 +4,7 @@ CREATE DATABASE magicshoes;
 
 DROP TABLE IF EXISTS shoes;
 CREATE TABLE shoes (
-  shoeID VARCHAR(60),
+  shoeId SERIAL PRIMARY KEY,
   shoeName VARCHAR(60),
   price VARCHAR(60),
   shoeLine VARCHAR(60)
@@ -12,10 +12,12 @@ CREATE TABLE shoes (
 
 DROP TABLE IF EXISTS colors;
 CREATE TABLE colors (
-  id VARCHAR(60),
-  shoeID VARCHAR(60),
-  url VARCHAR(500)
+  id SERIAL PRIMARY KEY,
+  shoeId INT,
+  url VARCHAR(200) NOT NULL
 );
 
-COPY shoes FROM '/Users/tony/Documents/Hack_Reactor/sdc/shoe_name_and_colors/db/shoes.csv' DELIMITERS ',' CSV;
-COPY colors FROM '/Users/tony/Documents/Hack_Reactor/sdc/shoe_name_and_colors/db/colors.csv' DELIMITERS ',' CSV;
+-- shoeId INT REFERENCES shoes (shoeId),
+
+COPY shoes(shoeId, shoeName, price, shoeLine) FROM '/Users/tony/Documents/Hack_Reactor/sdc/shoe_name_and_colors/db/shoes.csv' DELIMITERS ',' CSV HEADER;
+COPY colors(id, shoeId, url) FROM '/Users/tony/Documents/Hack_Reactor/sdc/shoe_name_and_colors/db/colors.csv' DELIMITERS ',' CSV HEADER;
