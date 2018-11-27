@@ -13,7 +13,7 @@ class App extends React.Component {
     this.changeShoe = this.changeShoe.bind(this);
     this.state = {
       shoeID: props.shoeID,
-      name: 'Air Jordan Retro V2',
+      name: 'MagicShoes',
       colors: [],
       price: '$200',
       shoeType: "Men's Shoe",
@@ -34,8 +34,8 @@ class App extends React.Component {
     let info = await axios.get(`/${shoeID}/colors`);
     [info] = info.data;
     const newState = {};
-    newState.shoeID = shoeID;
-    newState.name = info.shoeName;
+    newState.shoeID = info.shoeID;
+    newState.name = info.shoeName.split('_').join(' ');
     newState.colors = info.shoeColors;
     newState.price = info.price;
     newState.shoeType = info.shoeLine;

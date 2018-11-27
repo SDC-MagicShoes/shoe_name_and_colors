@@ -33,7 +33,7 @@ const seedEverything = () => {
     while (i <= numShoes) {
       const generatedColors = generateColorsArrays(5);
       const newShoe = {
-        shoeID: i,
+        shoeId: i,
         shoeName: `MagicShoes_${i}`,
         price: `$${Math.floor(Math.random() * 100) + 100}`,
         shoeLine: SHOELINE[(Math.floor(Math.random() * SHOELINE.length))],

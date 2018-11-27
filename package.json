@@ -10,6 +10,7 @@
     "build": "webpack -p",
     "start": "node server/server.js",
     "create-seed": "node db/seed10mCSV.js && node db/seed10mJSON.js'",
+    "seed": "psql < db/scehma.sql && mongoimport --db magicshoes --file db/shoes.json",
     "seedpsql": "psql < db/scehma.sql",
     "seedmongo": "mongoimport --db magicshoes --file db/shoes.json"
   },
@@ -36,7 +37,9 @@
     "lodash": "^4.17.11",
     "mongoose": "^5.3.8",
     "morgan": "^1.9.1",
+    "newrelic": "^4.11.0",
     "path": "^0.12.7",
+    "pg": "^7.6.1",
     "prop-types": "^15.6.2",
     "react": "^16.6.0",
     "react-dom": "^16.6.0",

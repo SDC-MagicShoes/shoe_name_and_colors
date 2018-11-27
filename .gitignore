@@ -3,11 +3,14 @@ node_modules
 
 # IGNORE webpack bundle
 /public/n&c_bundle.js
+newrelic.js
+newrelic_agent.log
 
 # IGNORE JSON AND CSV FILES
 /db/colors.csv
 /db/shoes.csv
 /db/shoes.json
+stresstest.js
 
 # INGORE coverage folder
 /coverage
