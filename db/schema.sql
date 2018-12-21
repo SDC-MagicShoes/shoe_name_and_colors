@@ -19,5 +19,5 @@ CREATE TABLE colors (
 
 -- shoeId INT REFERENCES shoes (shoeId),
 
-COPY shoes(shoeId, shoeName, price, shoeLine) FROM '/Users/tony/Documents/Hack_Reactor/sdc/shoe_name_and_colors/db/shoes.csv' DELIMITERS ',' CSV HEADER;
-COPY colors(id, shoeId, url) FROM '/Users/tony/Documents/Hack_Reactor/sdc/shoe_name_and_colors/db/colors.csv' DELIMITERS ',' CSV HEADER;
+\COPY shoes(shoeId, shoeName, price, shoeLine) FROM '/Users/tony/Documents/Hack_Reactor/sdc/shoe_name_and_colors/db/shoes.csv' DELIMITERS ',' CSV HEADER;
+\COPY colors(id, shoeId, url) FROM '/Users/tony/Documents/Hack_Reactor/sdc/shoe_name_and_colors/db/colors.csv' DELIMITERS ',' CSV HEADER;

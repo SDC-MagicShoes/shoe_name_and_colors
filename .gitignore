@@ -2,6 +2,7 @@
 node_modules
 
 # IGNORE webpack bundle
+# ignore newrelic files
 /public/n&c_bundle.js
 newrelic.js
 newrelic_agent.log
@@ -14,3 +15,7 @@ stresstest.js
 
 # INGORE coverage folder
 /coverage
+
+# IGNORE terraform and loader.io
+/terraform
+/loaderio-bdb53f82a91fa1b5696f4c471970468a.txt

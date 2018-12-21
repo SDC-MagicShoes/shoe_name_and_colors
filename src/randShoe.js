@@ -13,5 +13,6 @@ const IDS = ['310805-408', '310806-408', '310806-002', '305381-113', '852542-306
   'AQ9084-063', 'AQ9084-006', 'AQ9084-100', 'AQ9084-300', 'AQ9084-010'];
 
 const id = IDS[Math.floor(Math.random() * IDS.length)];
+// const  id = Math.floor(Math.random() * 1000 * 1000) + 1;
 
 module.exports = id;
